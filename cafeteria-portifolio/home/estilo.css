@@ -12,9 +12,34 @@ body {
 
 /* HEADER */
 .header {
-    padding: 20px;
-    background: rgba(107, 64, 8, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(107, 64, 8, 0.5);
     backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.btn-nav {
+    background: transparent;
+    border: 1px solid #f5e6d3;
+    color: #f5e6d3;
+    padding: 5px 15px;
+    margin-left: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-nav:hover {
+    background: #f5e6d3;
+    color: #4a2c06;
 }
 
 .header h1 {
@@ -29,21 +54,19 @@ body {
 
 /* HOME */
 .home {
-    margin-top: 120px;
+    margin-top: 150px;
     padding: 20px;
-}
-
-.titulo {
-    font-size: 32px;
-    margin-bottom: 10px;
     color: #94602b;
 }
 
-.descricao {
-    margin: 20px auto;
-    max-width: 500px;
-    color: #e0c3a3;
-    line-height: 1.5;
+.titulo {
+    font-size: 60px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.subtitulo {
+    font-size: 30px;
+    font-weight: 1000px;
 }
 
 /* BOTÕES */
@@ -58,9 +81,10 @@ body {
     background: linear-gradient(135deg, #c08a4d, #94602b);
     color: #1a1a1a;
     font-size: 16px;
-    border-radius: 12px;
+    border-radius: 30px;
     cursor: pointer;
     transition: 0.3s;
+    font-weight: bold;
 }
 
 .btn:hover {
@@ -74,14 +98,15 @@ body {
     bottom: 20px;
     right: 20px;
     padding: 15px 20px;
-    background: #ff3b3b;
-    color: white;
+    background: linear-gradient(135deg, #582b0a, #c08a4d);
+    color: black;
     border: none;
     border-radius: 30px;
     cursor: pointer;
     transition: 0.3s;
+    font-weight: bold;
 }
 
 .garcom:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
