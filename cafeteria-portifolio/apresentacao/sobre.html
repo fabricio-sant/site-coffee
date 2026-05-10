@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre a Zenith Coffee</title>
+    <link rel="stylesheet" href="sobre.css">
+</head>
+
+<body>
+    <div class="centralizar-conteudo">
+        <main>
+            <h1 class="titulo">Zenith Coffee</h1>
+            <h2 class="subtitulo">Eleve sua mente a cada xícara.</h2>
+            <p class="descricao"><strong>...</strong></p>
+        </main>
+
+        <button class="btn-toggle" onclick="toggleMenu()">☰</button>
+        <nav class="menu-horizontal" id="menuLateral">
+            <a href="apresentacao.html"><strong>Apresentação</strong></a>
+            <a href="home.html"><strong>Principal</strong></a>
+            <a href="cardapio.html"><strong>Cardápio</strong></a>
+            <a href="gerar_comanda.html"><strong>Comanda</strong></a>
+            <a href="chamar_garcom.html"><strong>Chamar Garçom</strong></a>
+        </nav>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menuLateral");
+            menu.classList.toggle("ativo"); // Adiciona ou remove a classe 'ativo'
+        }
+    </script>
+</body>
+
+</html>
