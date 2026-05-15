@@ -2,6 +2,14 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+.apresentacao {
+    color: rgb(3, 3, 3);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 24px;
+    margin: 0;
+    text-align: center;
+}
+
 .btn-comecar {
     display: inline-block;
     padding: 10px 19px;
