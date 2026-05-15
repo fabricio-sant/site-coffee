@@ -25,7 +25,7 @@ body {
     z-index: 1000;
 }
 
-.btn-nav {
+/*.btnHome {
     background: transparent;
     border: 1px solid #f5e6d3;
     color: #f5e6d3;
@@ -35,13 +35,13 @@ body {
     cursor: pointer;
     font-size: 14px;
     transition: 0.3s;
-}
+}*/
 
-.btn-nav:hover {
+/*.btnHome:hover {
     background: #f5e6d3;
     color: #4a2c06;
 }
-
+*/
 .header h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -70,11 +70,11 @@ body {
 }
 
 /* BOTÕES */
-.botoes {
+.btnHome {
     margin-top: 30px;
 }
 
-.btn {
+.btnHome {
     padding: 15px 30px;
     margin: 10px;
     border: none;
@@ -87,7 +87,7 @@ body {
     font-weight: bold;
 }
 
-.btn:hover {
+.btnHome:hover {
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
