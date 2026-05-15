@@ -89,6 +89,7 @@ body {
 
 /* Classe que o JavaScript ativa */
 .menu-horizontal.ativo {
+    background: #1a1a1a;
 }
 
 .btn-toggle:hover {
