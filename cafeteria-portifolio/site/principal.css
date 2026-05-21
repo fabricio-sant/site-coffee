@@ -1,5 +1,5 @@
 body {
-     margin: 0;
+    margin: 0;
     background: linear-gradient(135deg, oklch(27.882% 0.05205 48.418), #DEB887);
     color: #f5e6d3;
     text-align: center;
@@ -7,55 +7,212 @@ body {
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
+    overflow-x: hidden;
+    /* Evita barras de rolagem horizontais por causa dos textos grandes */
 }
 
+ html {
+    scroll-behavior: smooth;
+}
+
+/* --- TEXTOS DE FUNDO ESTILO MARCA D'ÁGUA --- */
+.textos-fundo-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* Torna o texto invisível ao clique (o cliente clica através dele) */
+    z-index: 1;
+    /* Fica atrás de todo o conteúdo principal */
+    user-select: none;
+    /* Impede o usuário de selecionar o texto por acidente */
+}
+
+.texto-fundo-item {
+    position: absolute;
+    font-family: 'Georgia', serif;
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: #f5e6d3;
+    opacity: 0.03;
+    /* Super suave e sutil para não poluir visualmente */
+    text-transform: uppercase;
+}
+
+/* --- CABEÇALHO PREMIUM (GLASSMORPHISM) --- */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
-    background: rgba(143, 72, 5, 0.774);
-    backdrop-filter: blur(10px);
+    padding: 10px 60px;
+    background: rgba(35, 18, 2, 0.75);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(192, 138, 77, 0.2);
     position: fixed;
     top: 0;
     width: 100%;
     box-sizing: border-box;
     z-index: 1000;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
-/*.btn-nav {
-    display: inline-block;
-    background: transparent;
-    border: 1px solid #f5e6d3;
-    color: #f5e6d3;
-    padding: 5px 15px;
-    margin-left: 10px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: 0.3s;
+.logo {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #f5e6d3, #c08a4d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: default;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.btn-nav:hover {
-    background: #f5e6d3;
-    color: #4a2c06;
-}*/
+.menu-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 20px;
+}
 
 .btn-toggle {
-    display: inline-block;
-    padding: 15px 30px;
-    margin: 10px;
-    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 50px;
+    height: 50px;
+    padding: 0;
     border: none;
-    background: linear-gradient(135deg, #c08a4d, #94602b);
-    color: #1a1a1a;
-    font-size: 16px;
-    border-radius: 30px;
+    background: linear-gradient(135deg, #723e02, #8a5015);
+    border-radius: 50%;
     cursor: pointer;
-    transition: 0.3s;
-    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    z-index: 1001;
 }
 
 .btn-toggle:hover {
-      display: flex;
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(192, 138, 77, 0.4);
+}
+
+.btn-toggle .linha {
+    width: 24px;
+    height: 3px;
+    background-color: #f5e6d3;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-toggle.ativo .linha:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.btn-toggle.ativo .linha:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.btn-toggle.ativo .linha:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.menu-horizontal {
+    display: flex;
+    gap: 15px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(110%);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.menu-horizontal.ativo {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.menu-horizontal a {
+    text-decoration: none;
+    color: #f5e6d3;
+    padding: 10px 20px;
+    border: 1px solid rgba(245, 230, 211, 0.5);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    background: rgba(74, 44, 6, 0.6);
+    backdrop-filter: blur(5px);
+    white-space: nowrap;
+}
+
+.menu-horizontal a:hover {
+    background: #f5e6d3;
+    color: #4a2c06;
+    box-shadow: 0 4px 12px rgba(245, 230, 211, 0.2);
+    transform: translateY(-2px);
+}
+
+/* --- CARD DE CURIOSIDADES --- */
+.balao-curiosidade {
+    position: relative;
+    margin-top: 110px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(74, 44, 6, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid #c08a4d;
+    border-radius: 20px;
+    padding: 14px 24px;
+    width: 90%;
+    max-width: 550px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    box-sizing: border-box;
+}
+
+.balao-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.balao-icone {
+    font-size: 22px;
+    animation: pulsar 2s infinite ease-in-out;
+}
+
+#textoCuriosidade {
+    margin: 0;
+    font-size: 14px;
+    color: #f5e6d3;
+    text-align: center;
+    font-family: sans-serif;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.balao-escondido {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+@keyframes pulsar {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
 }
